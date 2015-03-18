@@ -13,6 +13,7 @@
 
 #include <vector>
 #include "core/Share.h"
+#include "core/ComDraw.h"
 #include "core/ComThread.h"
 #include "parts/Sensor.h"
 #include "parts/State.h"
@@ -31,6 +32,7 @@ private:
 	void Launch_all();
 	void Join_all();
 
+	ComDraw drawer;
 	Share share;
 
 	Sensor sensor;
