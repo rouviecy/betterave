@@ -7,6 +7,7 @@ Easy communication between threads, which is useful for Robotics (publisher/subs
 ## Dependencies
 +    **CMake**
 +    **GCC** for c++11
++    **DOT** library to generate connexion graph
 +    **GNU/Linux** (not tested on Windows and MAC OS)
 
 ## To compile and execute
