@@ -14,7 +14,7 @@ Robot::Robot(){
 	state.Set_freq(1000000);	// 1 s
 
 	Link_all();
-	drawer.Draw_threads(threads);
+	drawer.Draw_threads("graph", threads);
 	Launch_all();
 
 	usleep(5000000);

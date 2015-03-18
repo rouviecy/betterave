@@ -4,7 +4,12 @@ using namespace std;
 
 ComDraw::ComDraw(){}
 
-void ComDraw::Draw_threads(vector <ComThread*> threads){
+void ComDraw::Draw_threads(string name, vector <ComThread*> threads){
+	Generate_dot(name, threads);
+	Generate_svg(name);
+}
+
+void ComDraw::Generate_dot(string name, vector <ComThread*> threads){
 	string dot_text = "digraph links {\n";
 	dot_text += "\tconcentrate=true;\n";
 	map <string, vector <int> > map_in;
@@ -41,10 +46,24 @@ void ComDraw::Draw_threads(vector <ComThread*> threads){
 		}
 	}
 	dot_text += "}";
-	ofstream dot_file;
-	dot_file.open(DOT_PATH);
-	dot_file << dot_text;
-	dot_file.close();
-	string command = "dot -Tpng " + string(DOT_PATH) + " > " + string(PNG_PATH);
-	system(command.c_str());
+	ofstream out_file;
+	out_file.open("./test/" + name + ".gv");
+	out_file << dot_text;
+	out_file.close();
+}
+
+void ComDraw::Generate_svg(string name){
+	#ifdef ENABLE_GRAPHVIZ	
+		FILE *dot_file = fopen(("./test/" + name + ".gv").c_str(), "r");
+		FILE *svg_file = fopen(("./test/" + name + ".svg").c_str(), "w");
+		GVC_t *gvc = gvContext();
+		Agraph_t *g = agread(dot_file);
+		gvLayout(gvc, g, "dot");
+		gvRender(gvc, g, "svg", svg_file);
+		gvFreeLayout(gvc, g);
+		agclose(g);
+		gvFreeContext(gvc);
+		fclose(dot_file);
+		fclose(svg_file);
+	#endif
 }

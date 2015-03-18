@@ -7,8 +7,10 @@ Easy communication between threads, which is useful for Robotics (publisher/subs
 ## Dependencies
 +    **CMake**
 +    **GCC** for c++11
-+    **DOT** library to generate connexion graph
 +    **GNU/Linux** (not tested on Windows and MAC OS)
+
+## Optional (can be enabled in `CMakeLists.txt`)
++    **Graphviz** to generate connexion graph
 
 ## To compile and execute
     git clone https://github.com/rouviecy/betterave

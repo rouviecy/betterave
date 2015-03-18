@@ -19,17 +19,21 @@
 #include <stdlib.h>
 #include "ComThread.h"
 
+#ifdef ENABLE_GRAPHVIZ
+	#include <gvc.h>
+#endif
+
 class ComDraw{
 
 public:
 
 	ComDraw();
-	void Draw_threads(std::vector <ComThread*> threads);
+	void Draw_threads(std::string name, std::vector <ComThread*> threads);
 
 private:
 
-	#define DOT_PATH "test/ComGraph.gv"
-	#define PNG_PATH "test/ComGraph.png"
+	void Generate_dot(std::string name, std::vector <ComThread*> threads);
+	void Generate_svg(std::string name);
 
 };
 

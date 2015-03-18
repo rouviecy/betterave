@@ -3,7 +3,19 @@ project(betterave)
 
 find_package(PkgConfig)
 
+set(ENABLE_GRAPHVIZ ON)
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
+
+if(${ENABLE_GRAPHVIZ})
+	pkg_check_modules(GVC REQUIRED libgvc)
+	if(GVC_FOUND)
+		add_definitions(-DENABLE_GRAPHVIZ)
+		include_directories(${GVC_INCLUDE_DIRS})
+		link_directories(${GVC_LIBRARY_DIRS})
+		set(LIBS ${LIBS} ${GVC_LIBRARIES})
+	endif(GVC_FOUND)
+endif(${ENABLE_GRAPHVIZ})
 
 add_library(BETTERAVE_LIBS
 	src/core/ComDraw.h		src/core/ComDraw.cpp
@@ -15,4 +27,4 @@ add_library(BETTERAVE_LIBS
 )
 
 add_executable(example src/mains/example.cpp)
-target_link_libraries(example BETTERAVE_LIBS)
+target_link_libraries(example ${LIBS} BETTERAVE_LIBS)
