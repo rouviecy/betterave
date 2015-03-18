@@ -17,6 +17,7 @@ Easy communication between threads, which is useful for Robotics (publisher/subs
     cd betterave
     mkdir build
     cd build
+    mkdir test
     cmake ..
     make
     ./example
