@@ -11,9 +11,8 @@
 #ifndef COMDRAW
 #define COMDRAW
 
-#include <vector>
-#include <iomanip>
 #include <iostream>
+#include <iomanip>
 #include <sstream>
 #include <fstream>
 #include "ComThread.h"

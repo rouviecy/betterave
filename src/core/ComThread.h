@@ -12,8 +12,6 @@
 #define COMTHREAD
 
 #include <unistd.h>
-#include <iostream>
-#include <string>
 #include <thread>
 #include "Share.h"
 

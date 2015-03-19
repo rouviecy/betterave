@@ -14,5 +14,7 @@ using namespace std;
 
 int main(){
 	Robot robot;
+	usleep(5000000);
+	robot.Shutdown();
 	return 0;
 }

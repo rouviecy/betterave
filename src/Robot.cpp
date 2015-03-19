@@ -2,40 +2,18 @@
 
 using namespace std;
 
-Robot::Robot(){
+Robot::Robot() : Maestro(){
 
 	// Warning : pass-by-reference to avoid slicing !
-	threads.push_back(&sensor);
-	threads.push_back(&state);
-
-	sensor.Set_name("My sensor");
-	sensor.Set_freq(10000);		// 10 ms
-	state.Set_name("My state manager");
-	state.Set_freq(1000000);	// 1 s
+	Add_thread(&sensor,	"My sensor",		10000);
+	Add_thread(&state,	"My state manager",	1000000);
 
 	Link_all();
-	drawer.Draw_threads("graph", threads);
+	Draw("coms");
 	Launch_all();
 
-	usleep(5000000);
+}
 
+void Robot::Shutdown(){
 	Join_all();
-}
-
-void Robot::Link_all(){
-	for(size_t i = 0; i < threads.size(); i++){
-		threads[i]->Link(&share);
-	}
-}
-
-void Robot::Launch_all(){
-	for(size_t i = 0; i < threads.size(); i++){
-		threads[i]->Launch();
-	}
-}
-
-void Robot::Join_all(){
-	for(size_t i = 0; i < threads.size(); i++){
-		threads[i]->Join();
-	}
 }

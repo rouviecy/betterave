@@ -11,32 +11,22 @@
 #ifndef ROBOT
 #define ROBOT
 
-#include <vector>
-#include "core/Share.h"
-#include "core/ComDraw.h"
-#include "core/ComThread.h"
+#include "core/Maestro.h"
 #include "parts/Sensor.h"
 #include "parts/State.h"
 
-class Robot{
+class Robot : public Maestro{
 
 public:
 
 	Robot();
+	void Shutdown();
 
 private:
 
-	std::vector <ComThread*> threads;
-
-	void Link_all();
-	void Launch_all();
-	void Join_all();
-
-	ComDraw drawer;
-	Share share;
-
 	Sensor sensor;
 	State state;
+
 };
 
 #endif

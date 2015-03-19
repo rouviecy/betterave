@@ -20,6 +20,7 @@ endif(${ENABLE_GRAPHVIZ})
 add_library(BETTERAVE_LIBS
 	src/core/ComDraw.h		src/core/ComDraw.cpp
 	src/core/ComThread.h	src/core/ComThread.cpp
+	src/core/Maestro.h		src/core/Maestro.cpp
 	src/core/Share.h		src/core/Share.cpp
 	src/parts/Sensor.h		src/parts/Sensor.cpp
 	src/parts/State.h		src/parts/State.cpp
