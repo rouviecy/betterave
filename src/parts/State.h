@@ -26,7 +26,6 @@ private:
 
 	void Job();
 	void IO();
-	void Send_tcp();
 
 };
 
