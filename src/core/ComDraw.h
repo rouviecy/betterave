@@ -11,12 +11,11 @@
 #ifndef COMDRAW
 #define COMDRAW
 
-#include <map>
 #include <vector>
 #include <iomanip>
+#include <iostream>
 #include <sstream>
 #include <fstream>
-#include <stdlib.h>
 #include "ComThread.h"
 
 #ifdef ENABLE_GRAPHVIZ

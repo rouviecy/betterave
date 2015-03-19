@@ -65,5 +65,7 @@ void ComDraw::Generate_svg(string name){
 		gvFreeContext(gvc);
 		fclose(dot_file);
 		fclose(svg_file);
+	#else
+		cout << "[Warning] You are trying to draw communication graph with Graphviz disabled." << endl;
 	#endif
 }
