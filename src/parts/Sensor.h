@@ -12,12 +12,14 @@
 #define SENSOR
 
 #include "../core/ComThread.h"
+#include "../interfaces/Serial.h"
 
-class Sensor : public ComThread{
+class Sensor : public ComThread, Serial{
 
 public:
 
 	Sensor();
+	~Sensor();
 
 private:
 

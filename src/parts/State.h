@@ -13,12 +13,14 @@
 
 #include <iostream>
 #include "../core/ComThread.h"
+#include "../interfaces/Serial.h"
 
-class State : public ComThread{
+class State : public ComThread, Serial{
 
 public:
 
 	State();
+	~State();
 
 private:
 
