@@ -4,7 +4,8 @@ project(betterave)
 find_package(PkgConfig)
 
 set(ENABLE_GRAPHVIZ ON)
-set(ENABLE_SDL OFF)
+set(ENABLE_PYTHON ON)
+set(ENABLE_SDL ON)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 
@@ -26,9 +27,14 @@ if(${ENABLE_SDL})
 	endif(SDL2_FOUND)
 endif(${ENABLE_SDL})
 
-find_package(PythonLibs REQUIRED)
-include_directories(${PYTHON_INCLUDE_DIRS})
-set(LIBS ${LIBS} ${PYTHON_LIBRARIES})
+if(${ENABLE_PYTHON})
+	find_package(PythonLibs REQUIRED)
+	if(PYTHONLIBS_FOUND)
+		add_definitions(-DENABLE_PYTHON)
+		include_directories(${PYTHON_INCLUDE_DIRS})
+		set(LIBS ${LIBS} ${PYTHON_LIBRARIES})
+	endif(PYTHONLIBS_FOUND)
+endif(${ENABLE_PYTHON})
 
 add_library(BETTERAVE_LIBS
 	src/core/ComDraw.h		src/core/ComDraw.cpp

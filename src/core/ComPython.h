@@ -11,7 +11,10 @@
 #ifndef COMPYTHON
 #define COMPYTHON
 
-#include <Python.h>
+#ifdef ENABLE_PYTHON
+	#include <Python.h>
+#endif
+
 #include <iostream>
 #include "ComThread.h"
 
@@ -29,8 +32,10 @@ public:
 
 private:
 
+	#ifdef ENABLE_PYTHON
+		PyObject *pObject;
+	#endif
 	bool connected;
-	PyObject *pObject;
 	PFloatMap input_keys, output_keys;
 
 protected:
