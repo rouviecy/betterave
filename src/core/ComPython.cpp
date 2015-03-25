@@ -3,9 +3,20 @@
 using namespace std;
 
 ComPython::ComPython() : ComThread(){
-	#define SCRIPT_NAME "chose"
-	#define CLASS_NAME "chouette"
-	#define FUNCTION_NAME "ping"
+	connected = false;
+}
+
+ComPython::~ComPython(){
+	Disconnect_python();
+}
+
+void ComPython::Connect_python(string script_name, string class_name){
+
+	// Verify it is not already connected
+	if(connected){
+		cout << "Warning : python is already connected !" << endl;
+		return;
+	}
 
 	// Initialize and include current path to PYTHONPATH
 	Py_Initialize();
@@ -13,19 +24,19 @@ ComPython::ComPython() : ComThread(){
 	PyRun_SimpleString("sys.path.insert(0, '../src/parts/python')");
 
 	// Load file
-	PyObject *pName = PyUnicode_FromString(SCRIPT_NAME);
+	PyObject *pName = PyUnicode_FromString(script_name.c_str());
 	PyObject *pModule = PyImport_Import(pName);
 	Py_DECREF(pName);
 	if(pModule == NULL){
-		cout << "Error loading python script : " + string(SCRIPT_NAME) << endl;
+		cout << "Error loading python script : " + script_name << endl;
 		return;
 	}
 
 	// Load class
-	PyObject *pClass = PyObject_GetAttrString(pModule, CLASS_NAME);
+	PyObject *pClass = PyObject_GetAttrString(pModule, class_name.c_str());
 	Py_DECREF(pModule);
 	if(!pClass){
-		cout << "Error loading class : " + string(CLASS_NAME) << endl;
+		cout << "Error loading python class : " + class_name << endl;
 		return;
 	}
 
@@ -33,44 +44,61 @@ ComPython::ComPython() : ComThread(){
 	pObject = PyObject_CallObject(pClass, NULL);
 	Py_DECREF(pClass);
 	if(pObject == NULL || !PyObject_IsInstance(pObject, pClass)){
-		cout << "Error loading instantiating class : " + string(CLASS_NAME) << endl;
+		cout << "Error instantiating python class : " + class_name << endl;
 		return;
 	}
 
-	// Load function from object
-	PyObject *pFunc = PyObject_GetAttrString(pObject, FUNCTION_NAME);
-	if(!pFunc){
-		cout << "Error loading function : " + string(FUNCTION_NAME) << endl;
-		return;
-	}
-
-	// Load arguments
-	PyObject *pArgs = PyTuple_New(1);
-	PyObject *pValue = PyLong_FromLong(42);
-	if(!pValue){
-		cout << "Error creating argument" << endl;
-		Py_DECREF(pArgs);
-		Py_DECREF(pValue);
-		Py_DECREF(pFunc);
-		return;
-	}
-	PyTuple_SetItem(pArgs, 0, pValue);
-
-	// Call function
-	pValue = PyObject_CallObject(pFunc, pArgs);
-	Py_DECREF(pArgs);
-	if(pValue == NULL){
-		cout << "Error loading return" << endl;
-		Py_DECREF(pFunc);
-		return;
-	}
-	cout << "Result : " << PyLong_AsLong(pValue) << endl;
-	Py_DECREF(pValue);
-	Py_DECREF(pFunc);
-	Py_DECREF(pObject);
-	
-	Py_Finalize();
-
+	connected = true;
 }
 
-ComPython::~ComPython(){}
+void ComPython::Disconnect_python(){
+	if(connected){
+		Py_DECREF(pObject);
+		Py_Finalize();
+		connected = false;
+	}
+}
+
+void ComPython::Link_input_python(string key, float *p_float){
+	Link_input(key, p_float);
+	if(!PyObject_HasAttrString(pObject, key.c_str())){
+		cout << "Error in part \"" << Get_name() << "\" : trying to link input \"" << key << "\" which does not exist in python script" << endl;
+		return;
+	}
+	input_keys[key] = p_float;
+}
+
+void ComPython::Link_output_python(string key, float *p_float){
+	Link_output(key, p_float);
+	if(!PyObject_HasAttrString(pObject, key.c_str())){
+		cout << "Error in part \"" << Get_name() << "\" : trying to link output \"" << key << "\" which does not exist in python script" << endl;
+		return;
+	}
+	output_keys[key] = p_float;
+}
+
+void ComPython::Send_to_python(){
+	for(PFloatMap::iterator it = input_keys.begin(); it != input_keys.end(); ++it){
+		PyObject *pValue = PyFloat_FromDouble((double) *(it->second));
+		PyObject_SetAttrString(pObject, (it->first).c_str(), pValue);
+		Py_DECREF(pValue);
+	}
+}
+
+void ComPython::Receive_from_python(){
+	for(PFloatMap::iterator it = output_keys.begin(); it != output_keys.end(); ++it){
+		PyObject *pValue = PyObject_GetAttrString(pObject, (it->first).c_str());
+		*(it->second) = (float) PyFloat_AsDouble(pValue);
+		Py_DECREF(pValue);
+	}
+}
+
+void ComPython::Job_python(){
+	PyObject *pFunc = PyObject_GetAttrString(pObject, "Job");
+	if(!pFunc){
+		cout << "Error loading Job function" << endl;
+		return;
+	}
+	PyObject_CallObject(pFunc, NULL);
+	Py_DECREF(pFunc);	
+}
