@@ -2,7 +2,7 @@
 
 using namespace std;
 
-State::State() : ComThread(){}
+State::State() : ComPython(){}
 
 State::~State(){}
 
