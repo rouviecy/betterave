@@ -5,7 +5,9 @@
  */
 
 /**
- * A robot
+ * A robot example :
+ * 	- grab data from joystick
+ * 	- send it to state manager
  */
 
 #ifndef ROBOT

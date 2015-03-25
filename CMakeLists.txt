@@ -4,6 +4,7 @@ project(betterave)
 find_package(PkgConfig)
 
 set(ENABLE_GRAPHVIZ ON)
+set(ENABLE_SDL ON)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 
@@ -17,15 +18,24 @@ if(${ENABLE_GRAPHVIZ})
 	endif(GVC_FOUND)
 endif(${ENABLE_GRAPHVIZ})
 
+if(${ENABLE_SDL})
+	pkg_search_module(SDL2 REQUIRED sdl2)
+	if(SDL2_FOUND)
+		add_definitions(-DENABLE_SDL)
+		set(LIBS ${LIBS} ${SDL2_LIBRARIES})
+	endif(SDL2_FOUND)
+endif(${ENABLE_SDL})
+
 add_library(BETTERAVE_LIBS
 	src/core/ComDraw.h		src/core/ComDraw.cpp
-	src/core/ComThread.h	src/core/ComThread.cpp
+	src/core/ComThread.h		src/core/ComThread.cpp
 	src/core/Maestro.h		src/core/Maestro.cpp
 	src/core/Share.h		src/core/Share.cpp
-	src/interfaces/Serial.h	src/interfaces/Serial.cpp
+	src/interfaces/Joystick.h	src/interfaces/Joystick.cpp
+	src/interfaces/Serial.h		src/interfaces/Serial.cpp
 	src/parts/Sensor.h		src/parts/Sensor.cpp
 	src/parts/State.h		src/parts/State.cpp
-	src/Robot.h				src/Robot.cpp
+	src/Robot.h			src/Robot.cpp
 )
 
 add_executable(example src/mains/example.cpp)

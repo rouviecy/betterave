@@ -13,9 +13,8 @@
 
 #include <iostream>
 #include "../core/ComThread.h"
-#include "../interfaces/Serial.h"
 
-class State : public ComThread, Serial{
+class State : public ComThread{
 
 public:
 

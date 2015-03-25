@@ -2,24 +2,21 @@
 
 using namespace std;
 
-Sensor::Sensor() : ComThread(), Serial(){
-	Serial_init("/dev/ttyUSB0");
+Sensor::Sensor() : ComThread(){
 	data_out = 0.;
+	joystick.Connect_joystick(0);
+	joystick.Print_infos();
+	data_joystick = joystick.Get_axes();
 }
 
-Sensor::~Sensor(){
-	Serial_close();
-}
+Sensor::~Sensor(){}
 
 void Sensor::IO(){
 	Link_output("my_data", &data_out);
 }
 
 void Sensor::Job(){
-	data_out += 1.;
-	if(data_out > 42.){
-		data_out = 0.;
-	}
+	joystick.Update_event();
+	data_out = (float) data_joystick[0];
 	Critical_send();
-	Serial_write("chose\0");
 }

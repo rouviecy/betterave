@@ -11,6 +11,7 @@ Easy communication between threads, which is useful for Robotics (publisher/subs
 
 ## Optional (can be enabled in `CMakeLists.txt`)
 +    **Graphviz** to generate connexion graph
++    **SDL2** to listen joystick (and draw soon)
 
 ## To compile and execute
     git clone https://github.com/rouviecy/betterave
