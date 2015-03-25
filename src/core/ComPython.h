@@ -22,8 +22,10 @@ public:
 	ComPython();
 	~ComPython();
 
-	void Connect_python(std::string script_name, std::string class_name);
-	void Disconnect_python();
+	void Connect_python(			// Connect to a Python script
+		std::string script_name,		// Script name (without .py) in src/parts/python
+		std::string class_name);		// Class to use in this script
+	void Disconnect_python();		// Close Python (destructor calls it if you forget ...)
 
 private:
 
@@ -33,17 +35,17 @@ private:
 
 protected:
 
-	void Link_input_python(
-		std::string key,
-		float *p_float);
+	void Link_input_python(			// Link input from Betterave AND output to Python (do not use Link_input)
+		std::string key,			// Topic name
+		float *p_float);			// Pointer to associated variable
 
-	void Link_output_python(
-		std::string key,
-		float *p_float);
+	void Link_output_python(		// Link output to Betterave AND input from Python (do not use Link_output)
+		std::string key,			// Topic name
+		float *p_float);			// Pointer to associated variable
 
-	void Send_to_python();
-	void Receive_from_python();
-	void Job_python();
+	void Send_to_python();			// Publish input variables to Python
+	void Receive_from_python();		// Refresh output variables from Python
+	void Job_python();			// Call Job() method of Python script
 
 };
 
