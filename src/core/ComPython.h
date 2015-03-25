@@ -22,6 +22,10 @@ public:
 	ComPython();
 	~ComPython();
 
+private:
+
+	PyObject *pObject;
+
 };
 
 #endif
