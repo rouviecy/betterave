@@ -135,7 +135,7 @@
   <g>
     <rect style="fill: #ffffff" x="880" y="660" width="133.2" height="28"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="880" y="660" width="133.2" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="946.6" y="679">Sensor</text>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="946.6" y="679">Sensor_J</text>
     <rect style="fill: #ffffff" x="880" y="688" width="133.2" height="20"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="880" y="688" width="133.2" height="20"/>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="883" y="702">-data_out: float</text>
@@ -147,7 +147,7 @@
   <g>
     <rect style="fill: #ffffff" x="880" y="820" width="125.5" height="28"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="880" y="820" width="125.5" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="942.75" y="839">State</text>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="942.75" y="839">State_P</text>
     <rect style="fill: #ffffff" x="880" y="848" width="125.5" height="20"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="880" y="848" width="125.5" height="20"/>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="883" y="862">-data_in: float</text>
@@ -167,7 +167,7 @@
     <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1560.15,378.236 1552.15,362.236 1544.15,378.236 "/>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="686.7,506.236 686.7,580 589.075,580 589.075,740 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="686.7,506.236 686.7,580 589.074,580 589.074,740 "/>
     <polygon style="fill: #ffffff" points="694.7,506.236 686.7,490.236 678.7,506.236 "/>
     <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="694.7,506.236 686.7,490.236 678.7,506.236 "/>
   </g>

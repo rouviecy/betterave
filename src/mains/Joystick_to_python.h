@@ -14,8 +14,8 @@
 #define JOYSTICK_TO_PYTHON
 
 #include "../core/Maestro.h"
-#include "../parts/Sensor.h"
-#include "../parts/State.h"
+#include "../parts/Sensor_J.h"
+#include "../parts/State_P.h"
 
 class Joystick_to_python : public Maestro{
 
@@ -26,8 +26,8 @@ public:
 
 private:
 
-	Sensor sensor;
-	State state;
+	Sensor_J sensor;
+	State_P state;
 
 };
 

@@ -12,9 +12,9 @@
 #define STATE
 
 #include <iostream>
-#include "../core/ComPython.h"
+#include "../core/ComThread.h"
 
-class State : public ComPython{
+class State : public ComThread{
 
 public:
 

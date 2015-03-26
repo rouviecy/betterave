@@ -45,8 +45,13 @@ add_library(BETTERAVE_LIBS
 	src/interfaces/Joystick.h	src/interfaces/Joystick.cpp
 	src/interfaces/Serial.h		src/interfaces/Serial.cpp
 	src/parts/Sensor.h		src/parts/Sensor.cpp
+	src/parts/Sensor_J.h		src/parts/Sensor_J.cpp
 	src/parts/State.h		src/parts/State.cpp
+	src/parts/State_P.h		src/parts/State_P.cpp
 )
 
 add_executable(joystick_to_python src/mains/Joystick_to_python.cpp)
 target_link_libraries(joystick_to_python ${LIBS} BETTERAVE_LIBS)
+
+add_executable(simple src/mains/Simple.cpp)
+target_link_libraries(simple ${LIBS} BETTERAVE_LIBS)

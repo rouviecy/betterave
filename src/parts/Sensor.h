@@ -12,7 +12,6 @@
 #define SENSOR
 
 #include "../core/ComThread.h"
-#include "../interfaces/Joystick.h"
 
 class Sensor : public ComThread{
 
@@ -23,14 +22,10 @@ public:
 
 private:
 
-	Joystick joystick;
-
 	void Job();
 	void IO();
 	
 	float data_out;
-
-	int *data_joystick;
 
 };
 

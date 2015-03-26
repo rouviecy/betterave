@@ -4,9 +4,6 @@ using namespace std;
 
 Sensor::Sensor() : ComThread(){
 	data_out = 0.;
-	joystick.Connect_joystick(0);
-	joystick.Print_infos();
-	data_joystick = joystick.Get_axes();
 }
 
 Sensor::~Sensor(){}
@@ -16,7 +13,6 @@ void Sensor::IO(){
 }
 
 void Sensor::Job(){
-	joystick.Update_event();
-	data_out = (float) data_joystick[3];
+	data_out += 1.;
 	Critical_send();
 }

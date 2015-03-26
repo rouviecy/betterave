@@ -2,20 +2,15 @@
 
 using namespace std;
 
-State::State() : ComPython(){
-	Connect_python("brain", "speaker");
-}
+State::State() : ComThread(){}
 
-State::~State(){
-
-}
+State::~State(){}
 
 void State::IO(){
-	Link_input_python("my_data", &data_in);
+	Link_input("my_data", &data_in);
 }
 
 void State::Job(){
 	Critical_receive();
-	Send_to_python();
-	Job_python();
+	cout << "Received data : " << data_in << endl;
 }
