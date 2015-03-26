@@ -46,8 +46,7 @@ add_library(BETTERAVE_LIBS
 	src/interfaces/Serial.h		src/interfaces/Serial.cpp
 	src/parts/Sensor.h		src/parts/Sensor.cpp
 	src/parts/State.h		src/parts/State.cpp
-	src/Robot.h			src/Robot.cpp
 )
 
-add_executable(example src/mains/example.cpp)
-target_link_libraries(example ${LIBS} BETTERAVE_LIBS)
+add_executable(joystick_to_python src/mains/Joystick_to_python.cpp)
+target_link_libraries(joystick_to_python ${LIBS} BETTERAVE_LIBS)
