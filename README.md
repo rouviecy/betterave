@@ -11,6 +11,7 @@ Easy communication between threads, which is useful for Robotics (publisher/subs
 
 ## Optional (can be enabled in `CMakeLists.txt`)
 +    **Graphviz** to generate connexion graph
++    **Python3 C-API** to communicate with python scripts
 +    **SDL2** to listen joystick (and draw soon)
 
 ## To compile and execute
@@ -21,4 +22,4 @@ Easy communication between threads, which is useful for Robotics (publisher/subs
     mkdir test
     cmake ..
     make
-    ./example
+    ./simple
