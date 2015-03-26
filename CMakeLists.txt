@@ -3,9 +3,15 @@ project(betterave)
 
 find_package(PkgConfig)
 
+# Beginning of custom zone
+
 set(ENABLE_GRAPHVIZ ON)
 set(ENABLE_PYTHON ON)
+set(ENABLE_JAVA ON)
 set(ENABLE_SDL ON)
+set(JAVA_LIBMAWT_PATH /etc/java-config-2/current-system-vm/jre/lib/amd64/xawt)
+
+# End of custom zone
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 
@@ -27,6 +33,22 @@ if(${ENABLE_SDL})
 	endif(SDL2_FOUND)
 endif(${ENABLE_SDL})
 
+if(${ENABLE_JAVA})
+	find_package(Java REQUIRED)
+	find_package(JNI REQUIRED)
+	if(JNI_FOUND)
+		include(UseJava)
+		set(CMAKE_JAVA_COMPILE_FLAGS "-source" "1.6" "-target" "1.6")
+		add_jar(Test src/parts/java/Test.java)
+		get_target_property(_jarFile Test JAR_FILE)
+		get_target_property(_classDir Test CLASSDIR)
+		add_definitions(-DENABLE_JAVA)
+		include_directories(${JNI_INCLUDE_DIRS})
+		find_library(JAVA_MAWT_LIBRARY mawt ${JAVA_LIBMAWT_PATH})
+		set(LIBS ${LIBS} ${JNI_LIBRARIES} ${JAVA_JVM_LIBRARY} ${JAVA_AWT_LIBRARY} ${JAVA_MAWT_LIBRARY})
+	endif(JNI_FOUND)
+endif(${ENABLE_JAVA})
+
 if(${ENABLE_PYTHON})
 	find_package(PythonLibs REQUIRED)
 	if(PYTHONLIBS_FOUND)
@@ -38,6 +60,7 @@ endif(${ENABLE_PYTHON})
 
 add_library(BETTERAVE_LIBS
 	src/core/ComDraw.h		src/core/ComDraw.cpp
+	src/core/ComJava.h		src/core/ComJava.cpp
 	src/core/ComPython.h		src/core/ComPython.cpp
 	src/core/ComThread.h		src/core/ComThread.cpp
 	src/core/Maestro.h		src/core/Maestro.cpp
@@ -46,12 +69,16 @@ add_library(BETTERAVE_LIBS
 	src/interfaces/Serial.h		src/interfaces/Serial.cpp
 	src/parts/Sensor.h		src/parts/Sensor.cpp
 	src/parts/Sensor_J.h		src/parts/Sensor_J.cpp
+	src/parts/Sensor_Java.h		src/parts/Sensor_Java.cpp
 	src/parts/State.h		src/parts/State.cpp
 	src/parts/State_P.h		src/parts/State_P.cpp
 )
 
+add_executable(simple src/mains/Simple.cpp)
+target_link_libraries(simple ${LIBS} BETTERAVE_LIBS)
+
 add_executable(joystick_to_python src/mains/Joystick_to_python.cpp)
 target_link_libraries(joystick_to_python ${LIBS} BETTERAVE_LIBS)
 
-add_executable(simple src/mains/Simple.cpp)
-target_link_libraries(simple ${LIBS} BETTERAVE_LIBS)
+add_executable(testjava src/mains/Testjava.cpp)
+target_link_libraries(testjava ${LIBS} BETTERAVE_LIBS)
