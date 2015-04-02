@@ -71,7 +71,6 @@ void CoreJava::Java_init(){
 void CoreJava::Java_close(){
 	#ifdef ENABLE_JAVA
 		if(connected){
-			jstr->jvm->DestroyJavaVM();
 			delete jstr;
 			connected = false;
 		}

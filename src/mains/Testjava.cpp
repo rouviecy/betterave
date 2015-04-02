@@ -20,6 +20,7 @@ Testjava::Testjava() : Maestro(){
 void Testjava::Shutdown(){
 	Join_all();
 	sensor.Disconnect_java();
+	state.Disconnect_python();
 	corejava.Java_close();
 }
 
