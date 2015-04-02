@@ -1,5 +1,5 @@
 /*
- * @(#)		State_P.h
+ * @(#)		State_Python.h
  * @version	2.0
  * @autor	C. Rouvière
  */
@@ -8,18 +8,18 @@
  * State of the robot managed by python script
  */
 
-#ifndef STATE_P
-#define STATE_P
+#ifndef STATE_PYTHON
+#define STATE_PYTHON
 
 #include <iostream>
 #include "../core/ComPython.h"
 
-class State_P : public ComPython{
+class State_Python : public ComPython{
 
 public:
 
-	State_P();
-	~State_P();
+	State_Python();
+	~State_Python();
 
 private:
 

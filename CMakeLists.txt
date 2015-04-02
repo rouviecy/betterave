@@ -70,10 +70,10 @@ add_library(BETTERAVE_LIBS
 	src/interfaces/Joystick.h	src/interfaces/Joystick.cpp
 	src/interfaces/Serial.h		src/interfaces/Serial.cpp
 	src/parts/Sensor.h		src/parts/Sensor.cpp
-	src/parts/Sensor_J.h		src/parts/Sensor_J.cpp
 	src/parts/Sensor_Java.h		src/parts/Sensor_Java.cpp
+	src/parts/Sensor_Joystick.h	src/parts/Sensor_Joystick.cpp
 	src/parts/State.h		src/parts/State.cpp
-	src/parts/State_P.h		src/parts/State_P.cpp
+	src/parts/State_Python.h	src/parts/State_Python.cpp
 )
 
 add_executable(simple src/mains/Simple.cpp)

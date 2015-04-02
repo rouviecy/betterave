@@ -16,7 +16,7 @@
 #include "../core/CoreJava.h"
 #include "../core/Maestro.h"
 #include "../parts/Sensor_Java.h"
-#include "../parts/State_P.h"
+#include "../parts/State_Python.h"
 
 class Testjava : public Maestro{
 
@@ -29,7 +29,7 @@ private:
 
 	CoreJava corejava;
 	Sensor_Java sensor;
-	State_P state;
+	State_Python state;
 
 };
 
