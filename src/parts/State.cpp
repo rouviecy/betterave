@@ -6,6 +6,8 @@ State::State() : ComThread(){}
 
 State::~State(){}
 
+void State::On_start(){}
+
 void State::IO(){
 	Link_input("my_data", &data_in);
 }

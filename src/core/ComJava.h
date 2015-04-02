@@ -17,6 +17,15 @@
 
 #include <iostream>
 #include "ComThread.h"
+#include "CoreJava.h"
+
+typedef struct{
+	#ifdef ENABLE_JAVA
+		jclass java_class;
+		jobject java_instance;
+		jmethodID java_job;
+	#endif
+}JOBJECTS_STRUCT;
 
 class ComJava : public ComThread{
 
@@ -25,18 +34,21 @@ public:
 	ComJava();
 	~ComJava();
 
-	void Connect_java(			// Connect to a Python script
-		std::string script_name,		// Script name (without .py) in src/parts/python
-		std::string class_name);		// Class to use in this script
-	void Disconnect_java();			// Close Python (destructor calls it if you forget ...)
+	void Connect_java(			// Connect to a Java class
+		CoreJava* corejava,			// Link to CoreJava
+		std::string full_class_name);		// "Java_part/..."
+	void Disconnect_java();			// Close Java (destructor calls it if you forget ...)
 
 private:
 
-	#ifdef ENABLE_JAVA
-
-	#endif
+	COREJAVA* jstr;
+	JOBJECTS_STRUCT* jobj;
+	JOBJECTS_STRUCT* Build_objects();
 	bool connected;
+	std::string full_class_name;
 	PFloatMap input_keys, output_keys;
+
+	void On_start();
 
 protected:
 

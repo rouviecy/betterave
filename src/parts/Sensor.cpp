@@ -8,6 +8,8 @@ Sensor::Sensor() : ComThread(){
 
 Sensor::~Sensor(){}
 
+void Sensor::On_start(){}
+
 void Sensor::IO(){
 	Link_output("my_data", &data_out);
 }

@@ -22,6 +22,7 @@ public:
 
 private:
 
+	void On_start();
 	void Job();
 	void IO();
 	

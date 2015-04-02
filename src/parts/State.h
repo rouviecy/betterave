@@ -25,6 +25,7 @@ private:
 
 	float data_in;
 
+	void On_start();
 	void Job();
 	void IO();
 

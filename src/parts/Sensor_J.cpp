@@ -11,6 +11,8 @@ Sensor_J::Sensor_J() : ComThread(){
 
 Sensor_J::~Sensor_J(){}
 
+void Sensor_J::On_start(){}
+
 void Sensor_J::IO(){
 	Link_output("my_data", &data_out);
 }

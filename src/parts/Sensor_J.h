@@ -25,6 +25,7 @@ private:
 
 	Joystick joystick;
 
+	void On_start();
 	void Job();
 	void IO();
 	

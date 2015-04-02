@@ -14,5 +14,6 @@ void Sensor_Java::IO(){
 
 void Sensor_Java::Job(){
 	data_out += 1.;
+	Job_java();
 	Critical_send();
 }

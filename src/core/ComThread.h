@@ -56,6 +56,7 @@ private:
 
 protected:
 
+	virtual void On_start() = 0;	// Overwrite : called on thread start
 	virtual void Job() = 0;		// Overwrite : job for the thread
 	virtual void IO() = 0;		// Overwrite : input and output links
 

@@ -22,6 +22,7 @@ void ComThread::Join(){
 }
 
 void ComThread::Loop_job(){
+	On_start();
 	if(dt_microseconds > 0){
 		while(job_go_on){
 			Job();

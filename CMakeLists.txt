@@ -39,9 +39,10 @@ if(${ENABLE_JAVA})
 	if(JNI_FOUND)
 		include(UseJava)
 		set(CMAKE_JAVA_COMPILE_FLAGS "-source" "1.6" "-target" "1.6")
-		add_jar(Test src/parts/java/Test.java)
-		get_target_property(_jarFile Test JAR_FILE)
-		get_target_property(_classDir Test CLASSDIR)
+		file(GLOB JAVA_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/parts/java/*.java")
+		add_jar(Java_parts ${JAVA_SOURCES})
+		get_target_property(_jarFile Java_parts JAR_FILE)
+		get_target_property(_classDir Java_parts CLASSDIR)
 		add_definitions(-DENABLE_JAVA)
 		include_directories(${JNI_INCLUDE_DIRS})
 		find_library(JAVA_MAWT_LIBRARY mawt ${JAVA_LIBMAWT_PATH})
@@ -63,6 +64,7 @@ add_library(BETTERAVE_LIBS
 	src/core/ComJava.h		src/core/ComJava.cpp
 	src/core/ComPython.h		src/core/ComPython.cpp
 	src/core/ComThread.h		src/core/ComThread.cpp
+	src/core/CoreJava.h		src/core/CoreJava.cpp
 	src/core/Maestro.h		src/core/Maestro.cpp
 	src/core/Share.h		src/core/Share.cpp
 	src/interfaces/Joystick.h	src/interfaces/Joystick.cpp

@@ -13,6 +13,7 @@
 #ifndef TESTJAVA
 #define TESTJAVA
 
+#include "../core/CoreJava.h"
 #include "../core/Maestro.h"
 #include "../parts/Sensor_Java.h"
 #include "../parts/State_P.h"
@@ -26,6 +27,7 @@ public:
 
 private:
 
+	CoreJava corejava;
 	Sensor_Java sensor;
 	State_P state;
 
