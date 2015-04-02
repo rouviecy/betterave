@@ -17,7 +17,7 @@ JOBJECTS_STRUCT* ComJava::Build_objects(){
 		// Load java class
 		jclass java_class = jstr->env->FindClass(full_class_name.c_str());
 		if(!java_class){
-			cout << "Error searching Java class \"" + full_class_name + "\"" << endl;
+			cout << "[Error] Failed to load Java class \"" + full_class_name + "\"" << endl;
 			return NULL;
 		}
 		java_class = reinterpret_cast <jclass> (jstr->env->NewGlobalRef(java_class));
@@ -25,14 +25,14 @@ JOBJECTS_STRUCT* ComJava::Build_objects(){
 		// Load class constructor
 		jmethodID java_class_constructor = jstr->env->GetMethodID(java_class, "<init>", "()V");
 		if(!java_class_constructor){
-			cout << "Error searching constructor of Java class \"" + full_class_name + "\"" << endl;
+			cout << "[Error] Failed to load constructor of Java class \"" + full_class_name + "\"" << endl;
 			return NULL;
 		}
 
 		// Instantiate object
 		jobject java_instance = jstr->env->NewObject(java_class, java_class_constructor);
 		if(!java_instance){
-			cout << "Error instantiating Java class \"" + full_class_name + "\"" << endl;
+			cout << "[Error] Failed to instante Java class \"" + full_class_name + "\"" << endl;
 			return NULL;
 		}
 		java_instance = reinterpret_cast <jobject> (jstr->env->NewGlobalRef(java_instance));
@@ -40,7 +40,7 @@ JOBJECTS_STRUCT* ComJava::Build_objects(){
 		// Load Job method
 		jmethodID java_job = jstr->env->GetMethodID(java_class, "Job", "()V");
 		if(!java_class_constructor){
-			cout << "Error searching Job method of Java class \"" + full_class_name + "\"" << endl;
+			cout << "[Error] Failed to load Job method of Java class \"" + full_class_name + "\"" << endl;
 			return NULL;
 		}
 
@@ -60,7 +60,7 @@ JOBJECTS_STRUCT* ComJava::Build_objects(){
 void ComJava::Connect_java(CoreJava* corejava, string full_class_name){
 
 	if(connected){
-		cout << "[Warning] java is already connected !" << endl;
+		cout << "[Warning] Java is already connected !" << endl;
 		return;
 	}
 
@@ -68,12 +68,12 @@ void ComJava::Connect_java(CoreJava* corejava, string full_class_name){
 		this->jstr = corejava->Get_jstr();
 		this->full_class_name = full_class_name;
 		if(!jstr || !corejava->Is_connected()){
-			cout << "Error connecting Java class \"" + full_class_name + "\"to JavaCore" << endl;
+			cout << "[Error] Failed to connect Java class \"" + full_class_name + "\"to JavaCore" << endl;
 			return;
 		}
 		jobj = Build_objects();
 		if(!jobj){
-			cout << "Error initialising Java class \"" + full_class_name + "\"" << endl;
+			cout << "[Error] Failed to initialize Java class \"" + full_class_name + "\"" << endl;
 			return;
 		}
 		connected = true;
@@ -95,7 +95,7 @@ void ComJava::On_start(){
 	#ifdef ENABLE_JAVA
 		int env_status = this->jstr->jvm->GetEnv((void **) &(this->jstr->env), JNI_VERSION_1_6);
 		if(env_status == JNI_EDETACHED)		{this->jstr->jvm->AttachCurrentThread((void **) &(this->jstr->env), NULL);}
-		else if(env_status == JNI_EVERSION)	{cout << "Error getting Java Env (version issue)" << endl; return;}
+		else if(env_status == JNI_EVERSION)	{cout << "[Error] Java Env (version issue)" << endl; return;}
 	#endif
 }
 

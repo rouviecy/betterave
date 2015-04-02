@@ -15,7 +15,7 @@ void ComPython::Connect_python(string script_name, string class_name){
 	#ifdef ENABLE_PYTHON
 		// Verify it is not already connected
 		if(connected){
-			cout << "Warning : python is already connected !" << endl;
+			cout << "[Warning] Python is already connected !" << endl;
 			return;
 		}
 
@@ -29,7 +29,7 @@ void ComPython::Connect_python(string script_name, string class_name){
 		PyObject *pModule = PyImport_Import(pName);
 		Py_DECREF(pName);
 		if(pModule == NULL){
-			cout << "Error loading python script : " + script_name << endl;
+			cout << "[Error] Failed to load python script \"" + script_name + "\"" << endl;
 			return;
 		}
 
@@ -37,7 +37,7 @@ void ComPython::Connect_python(string script_name, string class_name){
 		PyObject *pClass = PyObject_GetAttrString(pModule, class_name.c_str());
 		Py_DECREF(pModule);
 		if(!pClass){
-			cout << "Error loading python class : " + class_name << endl;
+			cout << "[Error] Failed to load python class \"" + class_name + "\"" << endl;
 			return;
 		}
 
@@ -45,20 +45,28 @@ void ComPython::Connect_python(string script_name, string class_name){
 		pObject = PyObject_CallObject(pClass, NULL);
 		Py_DECREF(pClass);
 		if(pObject == NULL || !PyObject_IsInstance(pObject, pClass)){
-			cout << "Error instantiating python class : " + class_name << endl;
+			cout << "[Error] Failed to instantiate python class \"" + class_name + "\"" << endl;
+			return;
+		}
+
+		// Load Job method
+		pFunc = PyObject_GetAttrString(pObject, "Job");
+		if(!pFunc){
+			cout << "[Error] Failed to load Job function in Python script \"" + Get_name() + "\"" << endl;
 			return;
 		}
 
 		connected = true;
 
 	#else
-		cout << "[Warning] You are trying to connect Python script without Python enabled" << endl;
+		cout << "[Warning] You are trying to connect Python script without Python enabled (see CMakeLists.txt)" << endl;
 	#endif 
 }
 
 void ComPython::Disconnect_python(){
 	#ifdef ENABLE_PYTHON
 		if(connected){
+			Py_DECREF(pFunc);
 			Py_DECREF(pObject);
 			Py_Finalize();
 			connected = false;
@@ -70,7 +78,7 @@ void ComPython::Link_input_python(string key, float *p_float){
 	Link_input(key, p_float);
 	#ifdef ENABLE_PYTHON
 		if(!PyObject_HasAttrString(pObject, key.c_str())){
-			cout << "Error in part \"" << Get_name() << "\" : trying to link input \"" << key << "\" which does not exist in python script" << endl;
+			cout << "[Error] Failed to link input \"" + key + "\" which does not exist in Python script \"" << Get_name() << endl;
 			return;
 		}
 		input_keys[key] = p_float;
@@ -81,7 +89,7 @@ void ComPython::Link_output_python(string key, float *p_float){
 	Link_output(key, p_float);
 	#ifdef ENABLE_PYTHON
 		if(!PyObject_HasAttrString(pObject, key.c_str())){
-			cout << "Error in part \"" << Get_name() << "\" : trying to link output \"" << key << "\" which does not exist in python script" << endl;
+			cout << "[Error] Failed to link output \"" + key + "\" which does not exist in Python script \"" << Get_name() << endl;
 			return;
 		}
 		output_keys[key] = p_float;
@@ -110,12 +118,6 @@ void ComPython::Receive_from_python(){
 
 void ComPython::Job_python(){
 	#ifdef ENABLE_PYTHON
-		PyObject *pFunc = PyObject_GetAttrString(pObject, "Job");
-		if(!pFunc){
-			cout << "Error loading Job function" << endl;
-			return;
-		}
 		PyObject_CallObject(pFunc, NULL);
-		Py_DECREF(pFunc);
 	#endif	
 }

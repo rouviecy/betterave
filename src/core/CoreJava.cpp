@@ -59,12 +59,12 @@ void CoreJava::Java_init(){
 	#ifdef ENABLE_JAVA
 		jstr = Build_jvm();
 		if(!jstr){
-			cout << "Error launching Java VM" << endl;
+			cout << "[Error] Failed to launch Java VM" << endl;
 			return;
 		}
 		connected = true;
 	#else
-		cout << "[Warning] You are trying to connect Java without Java enabled" << endl;
+		cout << "[Warning] You are trying to connect Java without Java enabled (see CMakeLists.txt)" << endl;
 	#endif
 }
 

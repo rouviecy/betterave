@@ -34,6 +34,7 @@ private:
 
 	#ifdef ENABLE_PYTHON
 		PyObject *pObject;
+		PyObject *pFunc;
 	#endif
 	bool connected;
 	PFloatMap input_keys, output_keys;

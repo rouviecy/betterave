@@ -15,7 +15,6 @@
 	#include <jni.h>
 #endif
 
-#include <iostream>
 #include "ComThread.h"
 #include "CoreJava.h"
 
