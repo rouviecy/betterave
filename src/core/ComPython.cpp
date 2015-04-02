@@ -52,7 +52,7 @@ void ComPython::Connect_python(string script_name, string class_name){
 		// Load Job method
 		pFunc = PyObject_GetAttrString(pObject, "Job");
 		if(!pFunc){
-			cout << "[Error] Failed to load Job function in Python script \"" + Get_name() + "\"" << endl;
+			cout << "[Error] Failed to load Job function in Python script \"" + class_name + "\"" << endl;
 			return;
 		}
 
@@ -78,7 +78,7 @@ void ComPython::Link_input_python(string key, float *p_float){
 	Link_input(key, p_float);
 	#ifdef ENABLE_PYTHON
 		if(!PyObject_HasAttrString(pObject, key.c_str())){
-			cout << "[Error] Failed to link input \"" + key + "\" which does not exist in Python script \"" << Get_name() << endl;
+			cout << "[Error] Failed to link input \"" + key + "\" which does not exist in Python script for part \"" << Get_name() << endl;
 			return;
 		}
 		input_keys[key] = p_float;
@@ -89,7 +89,7 @@ void ComPython::Link_output_python(string key, float *p_float){
 	Link_output(key, p_float);
 	#ifdef ENABLE_PYTHON
 		if(!PyObject_HasAttrString(pObject, key.c_str())){
-			cout << "[Error] Failed to link output \"" + key + "\" which does not exist in Python script \"" << Get_name() << endl;
+			cout << "[Error] Failed to link output \"" + key + "\" which does not exist in Python script for part \"" << Get_name() << endl;
 			return;
 		}
 		output_keys[key] = p_float;
