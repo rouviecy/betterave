@@ -82,5 +82,5 @@ target_link_libraries(simple ${LIBS} BETTERAVE_LIBS)
 add_executable(joystick_to_python src/mains/Joystick_to_python.cpp)
 target_link_libraries(joystick_to_python ${LIBS} BETTERAVE_LIBS)
 
-add_executable(testjava src/mains/Testjava.cpp)
-target_link_libraries(testjava ${LIBS} BETTERAVE_LIBS)
+add_executable(java_to_python src/mains/Java_to_python.cpp)
+target_link_libraries(java_to_python ${LIBS} BETTERAVE_LIBS)

@@ -9,11 +9,11 @@ Sensor_Java::Sensor_Java() : ComJava(){
 Sensor_Java::~Sensor_Java(){}
 
 void Sensor_Java::IO(){
-	Link_output("my_data", &data_out);
+	Link_output_java("my_data", &data_out);
 }
 
 void Sensor_Java::Job(){
-	data_out += 1.;
 	Job_java();
+	Receive_from_java();
 	Critical_send();
 }

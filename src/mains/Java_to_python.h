@@ -1,5 +1,5 @@
 /*
- * @(#)		Testjava.h
+ * @(#)		Java_to_python.h
  * @version	2.0
  * @autor	C. Rouvière
  */
@@ -10,19 +10,19 @@
  * 	- send it to python state manager
  */
 
-#ifndef TESTJAVA
-#define TESTJAVA
+#ifndef JAVA_TO_PYTHON
+#define JAVA_TO_PYTHON
 
 #include "../core/CoreJava.h"
 #include "../core/Maestro.h"
 #include "../parts/Sensor_Java.h"
 #include "../parts/State_Python.h"
 
-class Testjava : public Maestro{
+class Java_to_python : public Maestro{
 
 public:
 
-	Testjava();
+	Java_to_python();
 	void Shutdown();
 
 private:

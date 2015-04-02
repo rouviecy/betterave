@@ -102,26 +102,42 @@ void ComJava::On_start(){
 void ComJava::Link_input_java(string key, float *p_float){
 	Link_input(key, p_float);
 	#ifdef ENABLE_JAVA
-		//TODO
+		if(!jstr->env->GetFieldID(jobj->java_class, key.c_str(), "F")){
+			cout << "[Error] Failed to link input \"" + key + "\" which does not exist in Java class \"" << full_class_name << endl;
+			return;
+		}
+		input_keys[key] = p_float;
 	#endif
 }
 
 void ComJava::Link_output_java(string key, float *p_float){
 	Link_output(key, p_float);
 	#ifdef ENABLE_JAVA
-		//TODO
+		if(!jstr->env->GetFieldID(jobj->java_class, key.c_str(), "F")){
+			cout << "[Error] Failed to link output \"" + key + "\" which does not exist in Java class \"" << full_class_name << endl;
+			return;
+		}
+		output_keys[key] = p_float;
 	#endif
 }
 
 void ComJava::Send_to_java(){
 	#ifdef ENABLE_JAVA
-		//TODO
+		for(PFloatMap::iterator it = input_keys.begin(); it != input_keys.end(); ++it){
+			jfieldID jField = jstr->env->GetFieldID(jobj->java_class, it->first.c_str(), "F");
+			jfloat jValue = (jfloat) *(it->second);
+			jstr->env->SetFloatField(jobj->java_instance, jField, jValue);
+		}
 	#endif
 }
 
 void ComJava::Receive_from_java(){
 	#ifdef ENABLE_JAVA
-		//TODO
+		for(PFloatMap::iterator it = output_keys.begin(); it != output_keys.end(); ++it){
+			jfieldID jField = jstr->env->GetFieldID(jobj->java_class, it->first.c_str(), "F");
+			jfloat jValue = jstr->env->GetFloatField(jobj->java_instance, jField);
+			*(it->second) = (float) jValue;
+		}
 	#endif
 }
 
