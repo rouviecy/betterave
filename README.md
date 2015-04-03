@@ -15,12 +15,10 @@ Easy communication between threads, which is useful for Robotics (publisher/subs
 +    **Python3 C-API** to communicate with python scripts
 +    **SDL2** to listen joystick (and draw soon)
 
-## To compile and execute
-    git clone https://github.com/rouviecy/betterave
-    cd betterave
-    mkdir build
-    cd build
-    mkdir test
-    cmake ..
-    make
-    ./simple
+## Supported languages
++    **C++**
++    **Java6**
++    **Python3**
+
+## Tutorial
+See https://github.com/rouviecy/betterave/blob/master/Tuto.md
