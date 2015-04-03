@@ -35,6 +35,7 @@ In this example, we will create a sensor `src/parts/Sensor.cpp` which provide a 
 Sensor and State should inherit `src/core/ComThread.cpp`. So create two headers :
 
 `src/parts/Sensor.h` :
+
     #ifndef SENSOR_H
     #define SENSOR_H
     #include "../core/ComThread.h"
@@ -52,6 +53,7 @@ Sensor and State should inherit `src/core/ComThread.cpp`. So create two headers 
     #endif
 
 `src/parts/State.h`
+
     #ifndef STATE_H
     #define STATE_H
     #include "../core/ComThread.h"
@@ -77,6 +79,7 @@ Three methods must be overwritten :  `IO()`, `On_start()` and `Job()`.
 `Job()` represents what is done in the loop. Generally, you first call `Critical_receive()` to update your data, then you do your stuff with it, and finally you publish your results with `Critical_send()`.
 
 `src/parts/Sensor.cpp`
+
     #include "Sensor.h"
     using namespace std;
     
@@ -97,6 +100,7 @@ Three methods must be overwritten :  `IO()`, `On_start()` and `Job()`.
     }
 
 `src/parts/State.cpp`
+
     #include "State.h"
     using namespace std;
     
@@ -118,6 +122,7 @@ In this example, Sensor links its local float number `data_out` to `my_data`, in
 In order to control these two parts, you have to write a class which inherits from `src/core/Maestro.cpp` :
 
 `src/mains/Simple.h`
+
     #ifndef SIMPLE
     #define SIMPLE
     #include "../core/Maestro.h"
@@ -136,6 +141,7 @@ In order to control these two parts, you have to write a class which inherits fr
     #endif
 
 `src/mains/Simple.cpp`
+
     #include "Simple.h"
     using namespace std;
     
