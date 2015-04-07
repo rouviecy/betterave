@@ -170,21 +170,32 @@ That's all !
 
 ## Configuring your project for compiling
 
-Parameters should be set in `CMakeLists.txt`. First, enable or disable optional features (SDL, Python, Java, ...). If you want Java, you have to adjust `JAVA_LIBMAWT_PATH` to indicate where to find mawt library.
+Parameters should be set in `CMakeLists.txt`. First, enable or disable optional features (SDL, Python, Java, ...). If you want Java, you have to adjust `JAVA_LIBMAWT_PATH` to indicate where to find mawt library. Betterave core building parameters are provided by `src/core/CMakeLists.txt`.
 
-Then, add parts you have created in `BETTERAVE_LIBS`. And add executable for your `src/mains/...`. For the previous example, you should have :
+Then, add parts you have created and used interfaces in `BETTERAVE_USER`. And add executable for your `src/mains/...`. For the previous example, you should have :
 
-    add_library(BETTERAVE_LIBS
-    	src/core/ComDraw.h    src/core/ComDraw.cpp
-    	src/core/ComThread.h  src/core/ComThread.cpp
-    	src/core/Maestro.h    src/core/Maestro.cpp
-    	src/core/Share.h      src/core/Share.cpp
-    	src/parts/Sensor.h    src/parts/Sensor.cpp
-    	src/parts/State.h     src/parts/State.cpp
+`CMakeLists.txt`
+
+    cmake_minimum_required(VERSION 2.8)
+    project(betterave)
+    
+    find_package(PkgConfig)
+    
+    set(ENABLE_GRAPHVIZ ON)
+    set(ENABLE_PYTHON OFF)
+    set(ENABLE_JAVA OFF)
+    set(ENABLE_SDL OFF)
+    set(JAVA_LIBMAWT_PATH /etc/java-config-2/current-system-vm/jre/lib/amd64/xawt)
+    
+    include(${CMAKE_CURRENT_SOURCE_DIR}/src/core/CMakeLists.txt)
+    
+    add_library(BETTERAVE_USER
+        src/parts/Sensor.h		src/parts/Sensor.cpp
+        src/parts/State.h		src/parts/State.cpp
     )
     
     add_executable(simple src/mains/Simple.cpp)
-    target_link_libraries(simple ${LIBS} BETTERAVE_LIBS)
+    target_link_libraries(simple ${LIBS} BETTERAVE_USER BETTERAVE_CORE)
 
 ## Compile and execute
 
