@@ -15,6 +15,7 @@
 #include <iostream>
 #include "../core/ComThread.h"
 #include "../interfaces/FSM.h"
+#include "../interfaces/FSMDraw.h"
 
 class State_machine : public ComThread{
 
@@ -26,6 +27,7 @@ public:
 private:
 
 	FSM fsm;
+	FSMDraw drawer;
 
 	bool guard;
 	float data_in;

@@ -13,6 +13,7 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/src/core/CMakeLists.txt)
 
 add_library(BETTERAVE_USER
 	src/interfaces/FSM.h		src/interfaces/FSM.cpp
+	src/interfaces/FSMDraw.h	src/interfaces/FSMDraw.cpp
 	src/interfaces/Joystick.h	src/interfaces/Joystick.cpp
 	src/interfaces/Serial.h		src/interfaces/Serial.cpp
 	src/interfaces/TCP_client.h	src/interfaces/TCP_client.cpp

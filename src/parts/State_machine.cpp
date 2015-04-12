@@ -14,11 +14,18 @@ State_machine::State_machine() : ComThread(){
 	fsm.Add_event("event_2to3");
 	fsm.Add_event("event_3to1");
 
-	fsm.Add_transition("state_1", "state_2", "event_1to2", &guard, &(State_machine::Action_1to2), (void*) this);
-	fsm.Add_transition("state_2", "state_3", "event_2to3", &guard, &(State_machine::Action_2to3), (void*) this);
-	fsm.Add_transition("state_3", "state_1", "event_3to1", &guard, &(State_machine::Action_3to1), (void*) this);
+	fsm.Add_guard("my_guard", &guard);
+
+	fsm.Add_action("Action_1to2", &(State_machine::Action_1to2));
+	fsm.Add_action("Action_2to3", &(State_machine::Action_2to3));
+	fsm.Add_action("Action_3to1", &(State_machine::Action_3to1));
+
+	fsm.Add_transition("state_1", "state_2", "event_1to2", "my_guard", "Action_1to2", (void*) this);
+	fsm.Add_transition("state_2", "state_3", "event_2to3", "my_guard", "Action_2to3", (void*) this);
+	fsm.Add_transition("state_3", "state_1", "event_3to1", "my_guard", "Action_3to1", (void*) this);
 
 	fsm.Launch("state_1");
+	drawer.Draw_FSM( "FSM", &fsm);
 
 }
 
