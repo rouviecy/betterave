@@ -14,9 +14,13 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/src/core/CMakeLists.txt)
 add_library(BETTERAVE_USER
 	src/interfaces/Joystick.h	src/interfaces/Joystick.cpp
 	src/interfaces/Serial.h		src/interfaces/Serial.cpp
+	src/interfaces/TCP_client.h	src/interfaces/TCP_client.cpp
+	src/interfaces/TCP_server.h	src/interfaces/TCP_server.cpp
 	src/parts/Sensor.h		src/parts/Sensor.cpp
 	src/parts/Sensor_Java.h		src/parts/Sensor_Java.cpp
 	src/parts/Sensor_Joystick.h	src/parts/Sensor_Joystick.cpp
+	src/parts/Sensor_TCP_client.h	src/parts/Sensor_TCP_client.cpp
+	src/parts/Sensor_TCP_server.h	src/parts/Sensor_TCP_server.cpp
 	src/parts/State.h		src/parts/State.cpp
 	src/parts/State_Python.h	src/parts/State_Python.cpp
 )
@@ -29,3 +33,6 @@ target_link_libraries(joystick_to_python ${LIBS} BETTERAVE_USER BETTERAVE_CORE)
 
 add_executable(java_to_python src/mains/Java_to_python.cpp)
 target_link_libraries(java_to_python ${LIBS} BETTERAVE_USER BETTERAVE_CORE)
+
+add_executable(tcp_listener src/mains/TCP_listener.cpp)
+target_link_libraries(tcp_listener ${LIBS} BETTERAVE_USER BETTERAVE_CORE)

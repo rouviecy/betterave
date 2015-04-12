@@ -6,7 +6,7 @@
 
 /**
  * A robot example :
- * 	- generate fake dat sensor
+ * 	- generate fake data sensor
  * 	- send it to state manager
  */
 
