@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="99cm" height="56cm" viewBox="-41 39 1962 1107" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="320" y="560" width="820" height="500" rx="40" ry="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke-dasharray: 20 8 4 8; stroke: #000000" x="320" y="560" width="820" height="500" rx="40" ry="40"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="360" y="620" width="300" height="380"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="360" y="620" width="300" height="380"/>
+    <rect style="fill: #ffffff" x="360" y="600" width="73.3" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="360" y="600" width="73.3" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="362" y="615">src/mains</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="740" y="620" width="320" height="380"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="740" y="620" width="320" height="380"/>
+    <rect style="fill: #ffffff" x="740" y="600" width="73.3" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="740" y="600" width="73.3" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="742" y="615">src/parts</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-40" y="60" width="1360" height="460"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="-40" y="60" width="1360" height="460"/>
+    <rect style="fill: #ffffff" x="-40" y="40" width="65.6" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="-40" y="40" width="65.6" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-38" y="55">src/core</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="920" y="100" width="356.5" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="920" y="100" width="356.5" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:italic;font-weight:700" x="1098.25" y="119">ComThread</text>
+    <rect style="fill: #ffffff" x="920" y="128" width="356.5" height="84"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="920" y="128" width="356.5" height="84"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="142">-thr: thread</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="158">-dt_microseconds: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="174">-jog_go_on: bool</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="190">-name: string</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="206">-critical_input, critical_output: PFloatMap</text>
+    <rect style="fill: #ffffff" x="920" y="212" width="356.5" height="276"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="920" y="212" width="356.5" height="276"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="226">+Link(s:Share*): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="242">+Launch(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="258">+Join(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="274">+Set_name(name:string): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="290">+Set_freq(dt_microseconds:int): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="306">+Get_name(): string</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="322">+Get_freq(): float</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="338">+Get_inputs(): vector &lt;string&gt;</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="354">+Get_outputs(): vector &lt;string&gt;</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="370">-Loop_job(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:italic;font-weight:normal" x="923" y="386">#On_start(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:italic;font-weight:normal" x="923" y="402">#Job(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:italic;font-weight:normal" x="923" y="418">#IO(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="434">#Link_input(key:string,p_float:float*): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="450">#Link_output(key:string,p_float:float*): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="466">#Critical_receive(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="923" y="482">#Critical_send(): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="0" y="380" width="472" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="0" y="380" width="472" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="236" y="399">ComDraw</text>
+    <rect style="fill: #ffffff" x="0" y="408" width="472" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="0" y="408" width="472" height="8"/>
+    <rect style="fill: #ffffff" x="0" y="416" width="472" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="0" y="416" width="472" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="3" y="430">+Draw_threads(name:string,threads:vector &lt;ComThread*&gt;): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="3" y="446">-Generate_dot(name:string,threads:vector &lt;ComThread*&gt;): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="3" y="462">-Generate_svg(name:string): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="820" y="1100" width="89.95" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="820" y="1100" width="89.95" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="864.975" y="1119">Graphviz</text>
+    <rect style="fill: #ffffff" x="820" y="1128" width="89.95" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="820" y="1128" width="89.95" height="8"/>
+    <rect style="fill: #ffffff" x="820" y="1136" width="89.95" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="820" y="1136" width="89.95" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="520" y="100" width="271.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="520" y="100" width="271.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="655.9" y="119">Share</text>
+    <rect style="fill: #ffffff" x="520" y="128" width="271.8" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="520" y="128" width="271.8" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="142">-mu: mutex</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="158">-data: FloatMap</text>
+    <rect style="fill: #ffffff" x="520" y="164" width="271.8" height="84"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="520" y="164" width="271.8" height="84"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="178">+Create_data(key:string): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="194">+Send(input:PFloatMap): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="210">+Receive(StringVec:keys): FloatMap</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="226">-Lock(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="242">-Unlock(): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="520" y="340" width="333.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="520" y="340" width="333.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="686.7" y="359">Maestro</text>
+    <rect style="fill: #ffffff" x="520" y="368" width="333.4" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="520" y="368" width="333.4" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="382">-threads: vector &lt;ComThread*&gt;</text>
+    <rect style="fill: #ffffff" x="520" y="388" width="333.4" height="100"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="520" y="388" width="333.4" height="100"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="402">#Add_thread(thread:ComThread*,name:string,</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="418">            dt_microseconds:int): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="434">#Link_all(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="450">#Launch_all(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="466">#Join_all(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="523" y="482">#Draw(filename:string): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="400" y="760" width="200.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="400" y="760" width="200.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="500.2" y="779">Finite_state_machine</text>
+    <rect style="fill: #ffffff" x="400" y="788" width="200.4" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="400" y="788" width="200.4" height="8"/>
+    <rect style="fill: #ffffff" x="400" y="796" width="200.4" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="400" y="796" width="200.4" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="403" y="810">+main(): int</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-linejoin: round; stroke: #000000" x1="403" y1="811.6" x2="495.4" y2="811.6"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="403" y="826">+Shutdown(): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="780" y="660" width="140.9" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="780" y="660" width="140.9" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="850.45" y="679">Sensor</text>
+    <rect style="fill: #ffffff" x="780" y="688" width="140.9" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="780" y="688" width="140.9" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="783" y="702">-data_out: float</text>
+    <rect style="fill: #ffffff" x="780" y="708" width="140.9" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="780" y="708" width="140.9" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="783" y="722">-On_start(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="783" y="738">-Job(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="783" y="754">-IO(): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="780" y="800" width="233.3" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="780" y="800" width="233.3" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="896.65" y="819">State_machine</text>
+    <rect style="fill: #ffffff" x="780" y="828" width="233.3" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="780" y="828" width="233.3" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="783" y="842">-data_in: float</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="783" y="858">-guard: bool</text>
+    <rect style="fill: #ffffff" x="780" y="864" width="233.3" height="100"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="780" y="864" width="233.3" height="100"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="783" y="878">-On_start(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="783" y="894">-Job(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="783" y="910">-IO(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="783" y="926">-Action_1to2(obj:void*): void</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-linejoin: round; stroke: #000000" x1="783" y1="927.6" x2="1006.3" y2="927.6"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="783" y="942">-Action_2to3(obj:void*): void</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-linejoin: round; stroke: #000000" x1="783" y1="943.6" x2="1006.3" y2="943.6"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="783" y="958">-Action_3to1(obj:void*): void</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke-linejoin: round; stroke: #000000" x1="783" y1="959.6" x2="1006.3" y2="959.6"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1098.25,506.236 1098.25,674 920.9,674 "/>
+    <polygon style="fill: #ffffff" points="1106.25,506.236 1098.25,490.236 1090.25,506.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1106.25,506.236 1098.25,490.236 1090.25,506.236 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1098.25,506.236 1098.25,814 1013.3,814 "/>
+    <polygon style="fill: #ffffff" points="1106.25,506.236 1098.25,490.236 1090.25,506.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1106.25,506.236 1098.25,490.236 1090.25,506.236 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="686.7,506.236 686.7,600 500.2,600 500.2,760 "/>
+    <polygon style="fill: #ffffff" points="694.7,506.236 686.7,490.236 678.7,506.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="694.7,506.236 686.7,490.236 678.7,506.236 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="686.7,314.828 686.7,287 655.9,287 655.9,248 "/>
+    <polygon style="fill: #ffffff" points="686.7,340 681.9,326 686.7,312 691.5,326 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="686.7,340 681.9,326 686.7,312 691.5,326 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="671.3" y="284"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="697.7" y="336">1</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="659.9" y="260">1</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="791.8,114 792.8,114 919,114 920,114 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="855.9" y="111"/>
+    <polygon style="fill: #000000" points="851.9,111 851.9,103 843.9,107 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="795.8" y="111">1</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="916" y="111">*</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="494.828,354 236,354 236,380 "/>
+    <polygon style="fill: #ffffff" points="520,354 506,358.8 492,354 506,349.2 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="520,354 506,358.8 492,354 506,349.2 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="378" y="351"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="488" y="351">1</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="240" y="376">1</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="625.572,774 700,774 700,674 780,674 "/>
+    <polygon style="fill: #ffffff" points="600.4,774 614.4,769.2 628.4,774 614.4,778.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="600.4,774 614.4,769.2 628.4,774 614.4,778.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="702" y="721"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="632.4" y="771">1</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="776" y="671">1</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="625.572,774 700,774 700,814 780,814 "/>
+    <polygon style="fill: #ffffff" points="600.4,774 614.4,769.2 628.4,774 614.4,778.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="600.4,774 614.4,769.2 628.4,774 614.4,778.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="702" y="791"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="632.4" y="771">1</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="776" y="811">1</text>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="740" y="1044.45">
+    <tspan x="740" y="1044.45">What you have to do</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="1380" y="80" width="540" height="980"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1380" y="80" width="540" height="980"/>
+    <rect style="fill: #ffffff" x="1380" y="60" width="111.8" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1380" y="60" width="111.8" height="20"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1382" y="75">src/interfaces</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1440" y="660" width="410.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1440" y="660" width="410.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1645.2" y="679">FSM</text>
+    <rect style="fill: #ffffff" x="1440" y="688" width="410.4" height="84"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1440" y="688" width="410.4" height="84"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="702">-states: StateMap</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="718">-events: EventMap</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="734">-guards: GuardMap</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="750">-actions: FuncMap</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="766">-current_states: vector &lt;state*&gt;</text>
+    <rect style="fill: #ffffff" x="1440" y="772" width="410.4" height="148"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1440" y="772" width="410.4" height="148"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="786">+Add_state(name:string): bool</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="802">+Add_event(name:string): bool</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="818">+Add_guard(name:string,condition:bool*): bool</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="834">+Add_transition(state_from:string,state_to:string,</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="850">                event:string,trigger:string,</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="866">                action:string,obj:void*): bool</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="882">+Add_action(name:string,action:void(*)(void*)): bool</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="898">+Launch(state_init:string): bool</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="914">+Call_event(name:string): bool</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1460" y="200" width="157.45" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1460" y="200" width="157.45" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1538.72" y="219">struct transition</text>
+    <rect style="fill: #ffffff" x="1460" y="228" width="157.45" height="100"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1460" y="228" width="157.45" height="100"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1463" y="242">+state_from: string</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1463" y="258">+state_to: string</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1463" y="274">+event: string</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1463" y="290">+condition: string</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1463" y="306">+action: string</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1463" y="322">+obj: void*</text>
+    <rect style="fill: #ffffff" x="1460" y="328" width="157.45" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1460" y="328" width="157.45" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1560" y="100" width="271.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1560" y="100" width="271.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1695.9" y="119">struct state</text>
+    <rect style="fill: #ffffff" x="1560" y="128" width="271.8" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1560" y="128" width="271.8" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1563" y="142">+name: string</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1563" y="158">+transitions: vector &lt;transition*&gt;</text>
+    <rect style="fill: #ffffff" x="1560" y="164" width="271.8" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1560" y="164" width="271.8" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1480" y="360" width="348.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1480" y="360" width="348.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1654.4" y="379">struct event</text>
+    <rect style="fill: #ffffff" x="1480" y="388" width="348.8" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1480" y="388" width="348.8" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1483" y="402">+name: string</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1483" y="418">+listening_transitions: vector &lt;transition*&gt;</text>
+    <rect style="fill: #ffffff" x="1480" y="424" width="348.8" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1480" y="424" width="348.8" height="8"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="1440,674 1419,674 1419,214 1453.29,214 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1440.65,219 1456.65,214 1440.65,209 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="1440,674 1419,674 1419,114 1553.29,114 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1540.65,119 1556.65,114 1540.65,109 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="1440,674 1419,674 1419,374 1473.29,374 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1460.65,379 1476.65,374 1460.65,369 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1680" y="460" width="140.9" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1680" y="460" width="140.9" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1750.45" y="479">struct guard</text>
+    <rect style="fill: #ffffff" x="1680" y="488" width="140.9" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1680" y="488" width="140.9" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1683" y="502">+name: string</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1683" y="518">+condition: bool*</text>
+    <rect style="fill: #ffffff" x="1680" y="524" width="140.9" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1680" y="524" width="140.9" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1640" y="560" width="187.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1640" y="560" width="187.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1733.55" y="579">struct func</text>
+    <rect style="fill: #ffffff" x="1640" y="588" width="187.1" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1640" y="588" width="187.1" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1643" y="602">+name: string</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1643" y="618">+action: void(*)(void*)</text>
+    <rect style="fill: #ffffff" x="1640" y="624" width="187.1" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1640" y="624" width="187.1" height="8"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="1440,674 1419,674 1419,574 1633.29,574 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1620.65,579 1636.65,574 1620.65,569 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="1440,674 1419,674 1419,474 1673.29,474 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1660.65,479 1676.65,474 1660.65,469 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1440" y="940" width="325.7" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1440" y="940" width="325.7" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1602.85" y="959">FSMDraw</text>
+    <rect style="fill: #ffffff" x="1440" y="968" width="325.7" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1440" y="968" width="325.7" height="8"/>
+    <rect style="fill: #ffffff" x="1440" y="976" width="325.7" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1440" y="976" width="325.7" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="990">+Draw_FSM(name:string,fsm:FSM*): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="1006">-Generate_dot(name:string,fsm:FSM*): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1443" y="1022">-Generate_svg(string:name): void</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1038.47,854 1233.65,854 1233.65,698 1440,698 "/>
+    <polygon style="fill: #ffffff" points="1013.3,854 1027.3,849.2 1041.3,854 1027.3,858.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1013.3,854 1027.3,849.2 1041.3,854 1027.3,858.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1045.3" y="851">1</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="1436" y="695">1</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1039.48,882 1234.15,882 1234.15,954 1440,954 "/>
+    <polygon style="fill: #ffffff" points="1014.31,882 1028.31,877.2 1042.31,882 1028.31,886.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1014.31,882 1028.31,877.2 1042.31,882 1028.31,886.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1046.31" y="879">1</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="1436" y="951">1</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="1602.85,1028 1602.85,1114 916.655,1114 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="929.303,1109 913.303,1114 929.303,1119 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="1765.7,954 1880,954 1880,574 1833.81,574 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1846.45,569 1830.45,574 1846.45,579 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="1765.7,954 1880,954 1880,474 1827.61,474 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1840.25,469 1824.25,474 1840.25,479 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="1765.7,954 1880,954 1880,374 1835.51,374 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1848.15,369 1832.15,374 1848.15,379 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="1765.7,954 1880,954 1880,114 1838.51,114 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1851.15,109 1835.15,114 1851.15,119 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="1765.7,954 1880,954 1880,270 1624.16,270 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1636.8,265 1620.8,270 1636.8,275 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="1695.9,172 1695.9,214 1624.16,214 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1636.8,209 1620.8,214 1636.8,219 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="1654.4,360 1654.4,318 1624.16,318 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1636.8,313 1620.8,318 1636.8,323 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="236,468 236,1114 813.295,1114 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="800.647,1119 816.647,1114 800.647,1109 "/>
+  </g>
+</svg>
