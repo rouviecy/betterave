@@ -12,6 +12,7 @@ set(JAVA_LIBMAWT_PATH /etc/java-config-2/current-system-vm/jre/lib/amd64/xawt)
 include(${CMAKE_CURRENT_SOURCE_DIR}/src/core/CMakeLists.txt)
 
 add_library(BETTERAVE_USER
+	src/interfaces/FSM.h		src/interfaces/FSM.cpp
 	src/interfaces/Joystick.h	src/interfaces/Joystick.cpp
 	src/interfaces/Serial.h		src/interfaces/Serial.cpp
 	src/interfaces/TCP_client.h	src/interfaces/TCP_client.cpp
@@ -22,6 +23,7 @@ add_library(BETTERAVE_USER
 	src/parts/Sensor_TCP_client.h	src/parts/Sensor_TCP_client.cpp
 	src/parts/Sensor_TCP_server.h	src/parts/Sensor_TCP_server.cpp
 	src/parts/State.h		src/parts/State.cpp
+	src/parts/State_machine.h	src/parts/State_machine.cpp
 	src/parts/State_Python.h	src/parts/State_Python.cpp
 )
 
@@ -36,3 +38,6 @@ target_link_libraries(java_to_python ${LIBS} BETTERAVE_USER BETTERAVE_CORE)
 
 add_executable(tcp_listener src/mains/TCP_listener.cpp)
 target_link_libraries(tcp_listener ${LIBS} BETTERAVE_USER BETTERAVE_CORE)
+
+add_executable(finite_state_machine src/mains/Finite_state_machine.cpp)
+target_link_libraries(finite_state_machine ${LIBS} BETTERAVE_USER BETTERAVE_CORE)
