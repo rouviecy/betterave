@@ -11,6 +11,7 @@ void FSMDraw::Draw_FSM(string name, FSM* fsm){
 
 void FSMDraw::Generate_dot(string name, FSM* fsm){
 	string dot_text = "digraph links {\n";
+	dot_text += "\tedge [fontsize = 10];\n";
 	vector <state*> states = fsm->Get_states();
 	vector <state*> current_states = fsm->Get_current_states();
 	for(size_t i = 0; i < states.size(); i++){
@@ -23,7 +24,7 @@ void FSMDraw::Generate_dot(string name, FSM* fsm){
 		for(size_t j = 0; j < states[i]->transitions.size(); j++){
 			transition* trans = states[i]->transitions[j];
 			dot_text += "\t" + states[i]->name + "->" + trans->state_to;
-			dot_text += " [label = \"" + trans->trigger + "/" + trans->condition + "/" + trans->action + "\"] [minlen=5]\n";
+			dot_text += " [label = \"" + trans->trigger + "\\n" + trans->condition + "\\n" + trans->action + "\"] [minlen=4]\n";
 		}
 	}
 	dot_text += "}";
