@@ -158,3 +158,5 @@ vector <state*> FSM::Get_states(){
 	}
 	return result;
 }
+
+vector <state*> FSM::Get_current_states(){return current_states;}

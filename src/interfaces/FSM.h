@@ -88,6 +88,8 @@ public:
 
 	std::vector <state*> Get_states();
 
+	std::vector <state*> Get_current_states();
+
 private:
 
 	StateMap states;

@@ -12,8 +12,12 @@ void FSMDraw::Draw_FSM(string name, FSM* fsm){
 void FSMDraw::Generate_dot(string name, FSM* fsm){
 	string dot_text = "digraph links {\n";
 	vector <state*> states = fsm->Get_states();
+	vector <state*> current_states = fsm->Get_current_states();
 	for(size_t i = 0; i < states.size(); i++){
 		dot_text += "\t" + states[i]->name + ";\n";
+	}
+	for(size_t i = 0; i < current_states.size(); i++){
+		dot_text += "\t" + current_states[i]->name + "[shape=doublecircle];\n";
 	}
 	for(size_t i = 0; i < states.size(); i++){
 		for(size_t j = 0; j < states[i]->transitions.size(); j++){
