@@ -53,11 +53,11 @@ void ComDraw::Generate_dot(string name, vector <ComThread*> threads){
 }
 
 void ComDraw::Generate_svg(string name){
-	#ifdef ENABLE_GRAPHVIZ	
+	#ifdef ENABLE_GRAPHVIZ
 		FILE *dot_file = fopen(("./test/" + name + ".gv").c_str(), "r");
 		FILE *svg_file = fopen(("./test/" + name + ".svg").c_str(), "w");
 		GVC_t *gvc = gvContext();
-		Agraph_t *g = agread(dot_file);
+		Agraph_t *g = agread(dot_file, NULL);
 		gvLayout(gvc, g, "dot");
 		gvRender(gvc, g, "svg", svg_file);
 		gvFreeLayout(gvc, g);

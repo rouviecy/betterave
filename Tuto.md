@@ -21,9 +21,10 @@ Moreover, you can add optional features :
     sudo apt-get install python-dev
     sudo apt-get install libsdl2-dev
 
-1. Graphviz provides you a tool to generate a graph showing connexions between your threads
-2. OpenJDK with JNI allows you to write Java threads
-3. Python with C-API allows you to write Python threads
+1. Graphviz provides you a tool to generate a graph showing connexions between your threads 
+(version > 2.30)
+2. OpenJDK with JNI allows you to write Java threads (version 6)
+3. Python with C-API allows you to write Python threads (version 3)
 4. SDL2 adds joystick management
 
 ## Create your project
