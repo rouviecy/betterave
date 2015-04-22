@@ -16,7 +16,7 @@ You will need GCC and CMake to compile your project :
 
 Moreover, you can add optional features :
 
-    sudo apt-get install graphviz
+    sudo apt-get install graphviz-dev
     sudo apt-get install openjdk-6-jdk
     sudo apt-get install python-dev
     sudo apt-get install libsdl2-dev
