@@ -10,12 +10,14 @@ TCP_server::~TCP_server(){
 	if(connected){Close();};
 }
 
-void TCP_server::Configure(int server_port){
+bool TCP_server::Configure(int server_port){
 	sock = socket(AF_INET, SOCK_STREAM, 0);
 	if(sock < 0){
 		cout << "[Error] Failed to open TCP server socket on port " + to_string(server_port) << endl;
-		return;
+		return false;
 	}
+	int setoption = 1;
+	setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, (char*) &setoption, sizeof(setoption));
 	this->server_port = server_port;
 	struct sockaddr_in sin = { 0 };
 	sin.sin_family = AF_INET;
@@ -23,10 +25,11 @@ void TCP_server::Configure(int server_port){
 	sin.sin_port = htons(server_port);
 	if(bind(sock, (sockaddr*) &sin, sizeof sin) < 0){
 		cout << "[Error] Failed to bind TCP server socket on port " + to_string(server_port) << endl;
-		return;
+		return false;
 	}
 	cout << "TCP server connected on " + to_string(server_port) << endl;
 	thr = thread(&TCP_server::Accept_new_clients, this);
+	return true;
 }
 
 void TCP_server::Accept_new_clients(){
@@ -76,6 +79,16 @@ void TCP_server::Send(string msg_out){
 	delete[] msg;
 }
 
+void TCP_server::Direct_send(unsigned char* msg, int msg_size){
+	for(int i = 0; i < clients.size(); i++){
+		send(clients[i], msg, msg_size, 0);
+	}
+}
+
+int TCP_server::Direct_receive(int client_index, unsigned char* msg, int msg_size){
+	return recv(clients[client_index], msg, msg_size, 0);
+}
+
 void TCP_server::Close(){
 	if(!connected){
 		cout << "[Warning] Trying to close TCP server which is not connected !" << endl;
@@ -85,6 +98,12 @@ void TCP_server::Close(){
 	for(int i = 0; i < clients.size(); i++){
 		close(clients[i]);
 	}
+	cout << "Connecting killer client ..." << endl;
+	TCP_client killer_client;
+	killer_client.Configure("localhost", server_port);
+	usleep(1000000);
+	killer_client.Close();
+	usleep(1000000);
 	close(sock);
 	thr.join();
 	usleep(1000000);

@@ -1,6 +1,6 @@
 /*
  * @(#)		Serial.h
- * @version	1.0
+ * @version	3.0
  * @autor	C. Rouvière
  */
 
@@ -11,6 +11,7 @@
 #ifndef SERIAL
 #define SERIAL
 
+#include <mutex>
 #include <string>
 #include <cstring>
 #include <fcntl.h>
@@ -21,17 +22,24 @@ class Serial{
 
 public:
 
+	#define SERIAL_BUFFER_LEN 128
+
 	Serial();
 
-	void Serial_init(const char* path);
+	void Serial_init(const char* path, int baudrate, bool canonical_mode);
 	void Serial_close();
 
-	void Serial_write(std::string msg);
-	std::string Serial_read();
+	void Serial_write(unsigned char* msg, int len);
+	char* Serial_read();
+
+	void Lock();
+	void Unlock();
 	
 private:
 
+	char buf[SERIAL_BUFFER_LEN];
 	int device;
+	std::mutex mu;
 	struct termios tio_new, tio_old;
 
 };

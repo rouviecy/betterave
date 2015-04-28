@@ -18,6 +18,7 @@
 #include <string.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+#include "TCP_client.h"
 
 #ifndef TCP_SERVER
 #define TCP_SERVER
@@ -29,10 +30,12 @@ public:
 	TCP_server();
 	~TCP_server();
 
-	void Configure(int server_port);
+	bool Configure(int server_port);
 	int Get_nb_clients();
 	char* Receive(int client_index);
 	void Send(std::string msg_out);
+	void Direct_send(unsigned char* msg, int msg_size);
+	int Direct_receive(int client_index, unsigned char* msg, int msg_size);
 	void Close();
 
 private:

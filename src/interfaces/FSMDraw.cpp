@@ -35,7 +35,7 @@ void FSMDraw::Generate_dot(string name, FSM* fsm){
 }
 
 void FSMDraw::Generate_svg(string name){
-	#ifdef ENABLE_GRAPHVIZ
+	#ifdef ENABLE_GRAPHVIZ	
 		FILE *dot_file = fopen(("./test/" + name + ".gv").c_str(), "r");
 		FILE *svg_file = fopen(("./test/" + name + ".svg").c_str(), "w");
 		GVC_t *gvc = gvContext();
