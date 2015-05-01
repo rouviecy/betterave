@@ -17,13 +17,13 @@ You will need GCC and CMake to compile your project :
 Moreover, you can add optional features :
 
     sudo apt-get install graphviz-dev
-    sudo apt-get install openjdk-6-jdk
+    sudo apt-get install openjdk-7-jdk
     sudo apt-get install python-dev
     sudo apt-get install libsdl2-dev
 
 1. Graphviz provides you a tool to generate a graph showing connexions between your threads 
 (version > 2.30 ; but ubuntu package may be broken ...)
-2. OpenJDK with JNI allows you to write Java threads (version 6)
+2. OpenJDK with JNI allows you to write Java threads (version 6 or 7)
 3. Python with C-API allows you to write Python threads (version 3)
 4. SDL2 adds joystick management
 

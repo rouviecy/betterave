@@ -11,13 +11,14 @@ Easy communication between threads, which is useful for Robotics (publisher/subs
 
 ## Optional (can be enabled in `CMakeLists.txt`)
 +    **Graphviz** to generate connexion graph
-+    **Java Native Interface** to communicate with Java6 code (needs to set JAVA_LIBMAWT_PATH)
++    **Java Native Interface** to communicate with Java6 or Java7 code (needs to set 
+JAVA_LIBMAWT_PATH)
 +    **Python3 C-API** to communicate with python scripts
 +    **SDL2** to listen joystick (and draw soon)
 
 ## Supported languages
 +    **C++**
-+    **Java6**
++    **Java**
 +    **Python3**
 
 ## Tutorial
