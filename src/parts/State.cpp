@@ -9,7 +9,7 @@ State::~State(){}
 void State::On_start(){}
 
 void State::IO(){
-	Link_input("my_data", &data_in);
+	Link_input("my_data", COMFLOAT, 1, &data_in);
 }
 
 void State::Job(){

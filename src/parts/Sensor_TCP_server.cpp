@@ -13,7 +13,7 @@ Sensor_TCP_server::~Sensor_TCP_server(){}
 void Sensor_TCP_server::On_start(){}
 
 void Sensor_TCP_server::IO(){
-	Link_output("my_data", &data_out);
+	Link_output("my_data", COMFLOAT, 1, &data_out);
 }
 
 void Sensor_TCP_server::Job(){

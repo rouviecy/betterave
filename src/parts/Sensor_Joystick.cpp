@@ -14,7 +14,7 @@ Sensor_Joystick::~Sensor_Joystick(){}
 void Sensor_Joystick::On_start(){}
 
 void Sensor_Joystick::IO(){
-	Link_output("my_data", &data_out);
+	Link_output("my_data", COMFLOAT, 1, &data_out);
 }
 
 void Sensor_Joystick::Job(){

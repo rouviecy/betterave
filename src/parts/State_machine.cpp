@@ -34,7 +34,7 @@ State_machine::~State_machine(){}
 void State_machine::On_start(){}
 
 void State_machine::IO(){
-	Link_input("my_data", &data_in);
+	Link_input("my_data", COMFLOAT, 1, &data_in);
 }
 
 void State_machine::Job(){

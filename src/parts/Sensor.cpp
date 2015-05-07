@@ -11,7 +11,7 @@ Sensor::~Sensor(){}
 void Sensor::On_start(){}
 
 void Sensor::IO(){
-	Link_output("my_data", &data_out);
+	Link_output("my_data", COMFLOAT, 1, &data_out);
 }
 
 void Sensor::Job(){
