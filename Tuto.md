@@ -73,7 +73,7 @@ Sensor and State should inherit `src/core/ComThread.cpp`. So create two headers 
 
 Three methods must be overwritten :  `IO()`, `On_start()` and `Job()`.
 
-`IO()` is intented to link the object to the sharing environment with `Link_input(string key, float* p_float)` for incoming data, and `Link_output(string key, float* p_float)` for outgoing data. `key` is a string that all threads use for the same data, while `p_float` is a pointer to a local variable which has to be linked with this shared data. When `Critical_receive()` is called, each `p_float` will receive value from shared environment. When `Critical_send()` is called, each `p_float` will write its value on shared environment.
+`IO()` is intented to link the object to the sharing environment with `Link_input(string key, T_DATA data_type, int size, float* p_float)` for incoming data, and `Link_output(string key, T_DATA data_type, int size, float* p_float)` for outgoing data. `key` is a string that all threads use for the same data, `data_type` is COMBOOL/COMINT/COMFLOAT (bool/int/float), `size` is the size of the array (keep 1 for single variable), and `p_float` is a pointer to a local variable which has to be linked with this shared data. When `Critical_receive()` is called, each `p_float` will receive value from shared environment. When `Critical_send()` is called, each `p_float` will write its value on shared environment.
 
 `On_start()` is automatically called at the begining of the thread. You do not have to write something in, but it must be present.
 
@@ -92,7 +92,7 @@ Three methods must be overwritten :  `IO()`, `On_start()` and `Job()`.
     void Sensor::On_start(){}
     
     void Sensor::IO(){
-    	Link_output("my_data", &data_out);
+    	Link_output("my_data", COMFLOAT, 1, &data_out);
     }
     
     void Sensor::Job(){
@@ -110,7 +110,7 @@ Three methods must be overwritten :  `IO()`, `On_start()` and `Job()`.
     void State::On_start(){}
     
     void State::IO(){
-    	Link_input("my_data", &data_in);
+    	Link_input("my_data", COMFLOAT, 1, &data_in);
     }
     
     void State::Job(){

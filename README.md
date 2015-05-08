@@ -1,6 +1,9 @@
 #BETTERAVE
 Better Autonomous Vehicles Engine
 
+## Warning
+Python and Java support are currently broken (for new exchange types)
+
 ## Why ?
 Easy communication between threads, which is useful for Robotics (publisher/subscriber communication inspired from Robot Operating System http://www.ros.org). Each thread can be written in C++, Java or Python ; and you do not have to be concerned about how it works ! Simply overwrite some methods provided by this middleware, and your threads will communicate.
 
