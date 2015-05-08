@@ -6,9 +6,9 @@ State_machine::State_machine() : ComThread(){
 
 	guard = true;
 
-	fsm.Add_state("state_1");
-	fsm.Add_state("state_2");
-	fsm.Add_state("state_3");
+	fsm.Add_state("state_1", 1);
+	fsm.Add_state("state_2", 2);
+	fsm.Add_state("state_3", 3);
 
 	fsm.Add_event("event_1to2");
 	fsm.Add_event("event_2to3");
