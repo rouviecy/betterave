@@ -27,6 +27,7 @@ private:
 	void IO();
 	
 	float data_out;
+	float data_out_array[2];
 
 };
 

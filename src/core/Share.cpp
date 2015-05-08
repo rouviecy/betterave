@@ -7,10 +7,10 @@ Share::Share(){}
 Share::~Share(){
 	for(PDataMap::iterator it = data.begin(); it != data.end(); ++it){
 		switch(it->second.data_type){
-			case COMBOOL:	delete[] ((bool*) it->second.p_data);	break;
-			case COMINT:	delete[] ((int*) it->second.p_data);	break;
-			case COMFLOAT:	delete[] ((float*) it->second.p_data);	break;
-			default:						break;
+			case COMBOOL:	delete[] (bool*)	(it->second.p_data);	break;
+			case COMINT:	delete[] (int*)		(it->second.p_data);	break;
+			case COMFLOAT:	delete[] (float*)	(it->second.p_data);	break;
+			default:							break;
 		}
 	}
 }
@@ -51,22 +51,14 @@ bool Share::Create_data(string key, T_DATA data_type, int size){
 void Share::Update(PVoidMap io_data, bool is_input){
 	Lock();
 	for(PVoidMap::iterator it = io_data.begin(); it != io_data.end(); ++it){
+		void* a = it->second;
+		void* b = data[it->first].p_data;
 		for(int i = 0; i < (data[it->first]).size; i++){
-			T_DATA data_type = data[it->first].data_type;
-			if(data_type == COMBOOL){
-				bool* a = (bool*) it->second + i * sizeof(bool);
-				bool* b = (bool*) (data[it->first]).p_data;
-				if(is_input){*a = *b;}else{*b = *a;}
-			}
-			else if(data_type == COMINT){
-				int* a = (int*) it->second + i * sizeof(int);
-				int* b = (int*) (data[it->first]).p_data;
-				if(is_input){*a = *b;}else{*b = *a;}
-			}
-			else if(data_type == COMFLOAT){
-				float* a = (float*) it->second + i * sizeof(float);
-				float* b = (float*) (data[it->first]).p_data;
-				if(is_input){*a = *b;}else{*b = *a;}
+			switch(data[it->first].data_type){
+				case COMBOOL:	if(is_input)	{((bool*)a)[i]	= ((bool*)b)[i];}	else{((bool*)b)[i]	= ((bool*)a)[i];}	break;
+				case COMINT:	if(is_input)	{((int*)a)[i]	= ((int*)b)[i];}	else{((int*)b)[i]	= ((int*)a)[i];}	break;
+				case COMFLOAT:	if(is_input)	{((float*)a)[i]	= ((float*)b)[i];}	else{((float*)b)[i]	= ((float*)a)[i];}	break;
+				default:														break;
 			}
 		}
 	}

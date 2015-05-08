@@ -23,12 +23,12 @@ public:
 
 private:
 
-	float data_in;
-
 	void On_start();
 	void Job();
 	void IO();
 
+	float data_in;
+	float data_in_array[2];
 };
 
 #endif
