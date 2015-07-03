@@ -21,8 +21,7 @@ Moreover, you can add optional features :
     sudo apt-get install python-dev
     sudo apt-get install libsdl2-dev
 
-1. Graphviz provides you a tool to generate a graph showing connexions between your threads 
-(version > 2.30 ; but ubuntu package may be broken ...)
+1. Graphviz provides you a tool to generate a graph showing connexions between your threads
 2. OpenJDK with JNI allows you to write Java threads (version 6 or 7)
 3. Python with C-API allows you to write Python threads (version 3)
 4. SDL2 adds joystick management
@@ -196,7 +195,7 @@ Then, add parts you have created and used interfaces in `BETTERAVE_USER`. And ad
     )
     
     add_executable(simple src/mains/Simple.cpp)
-    target_link_libraries(simple ${LIBS} BETTERAVE_USER BETTERAVE_CORE)
+    target_link_libraries(simple BETTERAVE_USER BETTERAVE_CORE ${LIBS})
 
 ## Compile and execute
 

@@ -29,16 +29,16 @@ add_library(BETTERAVE_USER
 )
 
 add_executable(simple src/mains/Simple.cpp)
-target_link_libraries(simple ${LIBS} BETTERAVE_USER BETTERAVE_CORE)
+target_link_libraries(simple BETTERAVE_USER BETTERAVE_CORE ${LIBS})
 
 #add_executable(joystick_to_python src/mains/Joystick_to_python.cpp)
-#target_link_libraries(joystick_to_python ${LIBS} BETTERAVE_USER BETTERAVE_CORE)
+#target_link_libraries(joystick_to_python BETTERAVE_USER BETTERAVE_CORE ${LIBS})
 
 #add_executable(java_to_python src/mains/Java_to_python.cpp)
-#target_link_libraries(java_to_python ${LIBS} BETTERAVE_USER BETTERAVE_CORE)
+#target_link_libraries(java_to_python BETTERAVE_USER BETTERAVE_CORE ${LIBS})
 
 add_executable(tcp_listener src/mains/TCP_listener.cpp)
-target_link_libraries(tcp_listener ${LIBS} BETTERAVE_USER BETTERAVE_CORE)
+target_link_libraries(tcp_listener BETTERAVE_USER BETTERAVE_CORE ${LIBS})
 
 add_executable(finite_state_machine src/mains/Finite_state_machine.cpp)
-target_link_libraries(finite_state_machine ${LIBS} BETTERAVE_USER BETTERAVE_CORE)
+target_link_libraries(finite_state_machine BETTERAVE_USER BETTERAVE_CORE ${LIBS})
