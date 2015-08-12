@@ -16,6 +16,7 @@ add_library(BETTERAVE_USER
 	src/interfaces/FSMDraw.h	src/interfaces/FSMDraw.cpp
 	src/interfaces/Joystick.h	src/interfaces/Joystick.cpp
 	src/interfaces/Serial.h		src/interfaces/Serial.cpp
+	src/interfaces/SPI.h			src/interfaces/SPI.cpp
 	src/interfaces/TCP_client.h	src/interfaces/TCP_client.cpp
 	src/interfaces/TCP_server.h	src/interfaces/TCP_server.cpp
 	src/parts/Sensor.h		src/parts/Sensor.cpp
@@ -26,6 +27,7 @@ add_library(BETTERAVE_USER
 	src/parts/State.h		src/parts/State.cpp
 	src/parts/State_machine.h	src/parts/State_machine.cpp
 #	src/parts/State_Python.h	src/parts/State_Python.cpp
+	src/interfaces/Maths_tools.h
 )
 
 add_executable(simple src/mains/Simple.cpp)
